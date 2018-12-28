@@ -32,12 +32,12 @@ def clean():
 	return
 
 def main():
-print("Program Running...")
+	print("Program Running...")
 
-config()
-wait()
-clean()
-return
+	config()
+	wait()
+	clean()
+	return
 
 
 
