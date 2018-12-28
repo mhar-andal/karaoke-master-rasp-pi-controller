@@ -37,7 +37,8 @@ def main():
 	config()
 	wait()
 	clean()
-	return
+	while(1):
+		print("Hello")
 
 
 
