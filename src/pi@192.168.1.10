@@ -4,15 +4,19 @@
 import RPi.GPIO as GPIO
 import time
 
+
+
+
 def config():
 
 	# follows pin numbers listed on header P1
-	GPIO.setmode(GPIO.BCM)
+	GPIO.setmode(GPIO.BOARD)
+	GPIO.setup(pin_number, GPIO.OUT)
 
 	# could optionally be GPIO.LOW / 0 / false
 	# out_List = {11,12}
-	GPIO.setup(12, GPIO.OUT)
-	GPIO.output(12, GPIO.LOW)
+	pin_number = 11
+	GPIO.output(pin_number, GPIO.LOW)
 
 	# WE CANNOT DO THIS SINCE WE CANNOT TRIGGER MULTIPLE AT THE SAME TIME 
 	# GPIO.output(out_List, GPIO.LOW)
@@ -22,26 +26,23 @@ def config():
 	return;
 
 def wait():
-	print("Waiting 1 second")
-	time.sleep(1)
+	time.sleep(0.075)
 	return;
 
 def clean():
-	print("Cleaning GPIO")
 	GPIO.cleanup()
 	return;
 
 def main():
 	print("Program Running...")
 
-	clean()
 	config()
 	wait()
+	clean()
+	while(1):
+		print("Hello")
 
 	return;
-
-main()
-
 
 
 
