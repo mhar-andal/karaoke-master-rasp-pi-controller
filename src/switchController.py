@@ -14,7 +14,7 @@ BUTTON6 = 18
 BUTTON7 = 17
 BUTTON8 = 27
 BUTTON9 = 22
-BUTTON0 = 23
+BUTTON10 = 23
 #RSV 
 BUTTON11 = 10
 
@@ -39,9 +39,6 @@ def config(trigger):
 
 	# INSTEAD WE MUST WRITE A FUNCTION THAT TAKES AS INPUT THE PIN TO SET LOW
 	# WE THEN SET THE PIN LOW AND CALL A FUNCTION TO WAIT AND REPEAT
-	return;
-
-
 
 def changeButton(trigger, pin, state):
 
@@ -49,9 +46,6 @@ def changeButton(trigger, pin, state):
 	trigger.state = state
 
 	config(trigger)
-
-	return;
-
 
 def changeState(trigger):
 
@@ -62,19 +56,13 @@ def changeState(trigger):
 
 	GPIO.output(trigger.pin, trigger.state)
 
-	return;
-
-
 def wait():
-	print("Waiting 1 second")
+	print("Waiting 200 ms")
 	time.sleep(.2)
-	return;
-
 
 def clean():
 	print("Cleaning GPIO")
 	GPIO.cleanup()
-	return;
 
 def runInput(arr):
 	arr.append(11)
@@ -89,19 +77,19 @@ def runInput(arr):
 		changeState(trigger)
 		clean()
 
-def main():
-	print("Program Running...")
+#def main():
+	#print("Program Running...")
 
-	pass the 'BCM' equivalent pin number and 0/1 for LOW/HIGH
-	arr = [1,8,2,8,0]
-
-
-	arr.append(11)
-
-	runInput(arr)
+	# pass the 'BCM' equivalent pin number and 0/1 for LOW/HIGH
+	#arr = [1,3,6,6,4]
 
 
-main()
+	#arr.append(11)
+
+	#runInput(arr)
+
+
+#main()
 
 
 

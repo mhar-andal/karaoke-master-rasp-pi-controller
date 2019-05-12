@@ -1,1 +1,0 @@
-scp -r /Users/mattstevenson/Desktop/karoakeProj/controller/karaoke-master-rasp-pi-controller/src pi@192.168.1.10:~/Desktop/karaoke-master-rasp-pi-controller/src
